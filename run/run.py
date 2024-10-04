@@ -58,6 +58,7 @@ class RUN:
         return summary_res
 
     def categorization(self, collected_info, systme_prompt, user_prompt):
+        print(f"--- categorization ---")
         titles=""
         for p_idx,pr in enumerate(collected_info):
             title=pr['title']
@@ -114,7 +115,7 @@ class RUN:
         return summary_res
 
     def create_markdown_report(self,report_type,data,image_path=None):
-        report = f"## {report_type} \n\n"
+        report = f"# Daily Artificial Intelligence Insights : {report_type}"
 
         if image_path:
             image_path=image_path.split("/")[-1]
@@ -125,16 +126,13 @@ class RUN:
             summary = entry.get('summary', 'No summary provided')
             source = entry.get('source', 'No source provided')
             
-            report += f"### {category}\n\n"
+            report += f"## {category}\n\n"
             
             report += f"**요약:**\n\n{summary}\n\n"
             
             report += f"**출처:**\n\n{source}\n\n"
 
-
-        result=f"""# Daily Artificial Intelligence Insights \n\n{report}
-        """
-        self.save_report_to_markdown(f'{self.result_path}/{report_type}_{self.today}_report.md', result)
+        self.save_report_to_markdown(f'{self.result_path}/{report_type}_{self.today}_report.md', report)
 
         return report
 
