@@ -97,11 +97,12 @@ class RUN:
     
     def news(self):
         news_infos=get_hot_news()
-
-        categorized_res=self.categorization(news_infos,
-                                        news_categorize_systme_prompt,
-                                        news_categorize_user_prompt,
-                                        )
+        categorized_res=[]
+        while len(categorized_res) == 0:
+            categorized_res=self.categorization(news_infos,
+                                            news_categorize_systme_prompt,
+                                            news_categorize_user_prompt,
+                                            )
 
         create_pie_chart_with_info(categorized_res,self.news_image_path)
 
@@ -129,7 +130,12 @@ class RUN:
             report += f"**요약:**\n\n{summary}\n\n"
             
             report += f"**출처:**\n\n{source}\n\n"
-        
+
+
+        result=f"""# Daily Artificial Intelligence Insights \n\n{report}
+        """
+        self.save_report_to_markdown(f'{self.result_path}/{report_type}_{self.today}_report.md', result)
+
         return report
 
     def save_report_to_markdown(self,filename, report_content):
@@ -146,7 +152,7 @@ class RUN:
         news_md=self.create_markdown_report("News",
                                         news_summary_result,
                                         self.news_image_path)
-        result=f"""# Daily Artificial Intelligence Insights \n\n{news_md} \n\n{paper_md}
-        """
-        self.save_report_to_markdown(f'{self.result_path}/{self.today}_report.md', result)
+        # result=f"""# Daily Artificial Intelligence Insights \n\n{news_md} \n\n{paper_md}
+        # """
+        # self.save_report_to_markdown(f'{self.result_path}/{self.today}_report.md', result)
 
