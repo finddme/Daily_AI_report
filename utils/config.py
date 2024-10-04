@@ -1,7 +1,9 @@
 from datetime import datetime
 import signal
+import os
+import openai
 
-Openai_API_KEY=""
+Openai_API_KEY= os.getenv("OPENAI_API_KEY")
 Claude_API_KEY=""
 
 openai_model_name="gpt-4o"
