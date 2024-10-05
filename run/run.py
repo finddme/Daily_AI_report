@@ -45,8 +45,8 @@ class RUN:
                 url=c["url"]
                 
                 insert_content+=f"""
-                - Title: "{title}"
-                Summary: "{summary}"
+                - Title: '{title}'
+                - Snippet/Abstract : '{summary}'
                 """
 
                 source+=f""" - {title} ({url})\n"""
