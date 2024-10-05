@@ -61,7 +61,6 @@ dill==0.3.7
 distlib==0.3.8
 distro==1.7.0
 docstring_parser==0.16
-duckduckgo_search==6.2.11
 einops==0.8.0
 eval_type_backport==0.2.0
 evaluate==0.4.1
