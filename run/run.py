@@ -16,8 +16,8 @@ class RUN:
 
         self.llm=llm_map[self.args.llm]
 
-        self.completion=Completion(self.llm)
-        self.instrctor=Instructor(self.llm)
+        # self.completion=Completion(self.llm)
+        # self.instrctor=Instructor(self.llm)
 
         self.today = get_current_date_hyphen()
 
@@ -36,6 +36,7 @@ class RUN:
 
         summary_res=[]
         for cd_idx,(cd_k,cd_v) in enumerate(category_dict.items()):
+            completion=Completion(self.llm)
             print(cd_idx)
             source=""
             insert_content=""
@@ -51,13 +52,14 @@ class RUN:
 
                 source+=f""" - {title} ({url})\n"""
             
-            user_prompt=user_prompt.format(insert_content)
+            user_prompt_insert=user_prompt.format(insert_content)
             summary_res.append({"category":cd_k, 
-                                "summary":self.completion(systme_prompt,user_prompt), 
+                                "summary":completion(user_prompt_insert, systme_prompt), 
                                 "source":source})
         return summary_res
 
     def categorization(self, collected_info, systme_prompt, user_prompt):
+        instrctor=Instructor(self.llm)
         print(f"--- categorization ---")
         titles=""
         for p_idx,pr in enumerate(collected_info):
@@ -66,7 +68,7 @@ class RUN:
 
         user_prompt=user_prompt.format(titles)
 
-        category=json.loads(self.instrctor(user_prompt,
+        category=json.loads(instrctor(user_prompt,
                             systme_prompt))
 
         categorized_res=[]
