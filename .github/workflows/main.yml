@@ -18,6 +18,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt --ignore-installed 
     - name: Run Python script
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: python main.py  
     - name: Commit and push if changes
       run: |
