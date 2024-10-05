@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 from collections import Counter
 import numpy as np
 import matplotlib.font_manager as fm
+import os 
+os.system('apt-get install fonts-nanum*')
 
 def create_pie_chart_with_info(data,image_path):
     plt.rc('font', family='NanumSquare')
