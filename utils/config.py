@@ -1,6 +1,7 @@
 from datetime import datetime
 import signal
 import os
+import openai
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 Openai_API_KEY=openai.api_key
