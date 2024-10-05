@@ -18,3 +18,4 @@ pydantic_core==2.20.1
 torch
 arxiv
 matplotlib
+lxml
