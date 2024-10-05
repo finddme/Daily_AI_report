@@ -9,6 +9,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.PAT }}
+        fetch-depth: 0
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -30,3 +33,5 @@ jobs:
         git add reports/
         git commit -m "Daily update: $(date +'%Y-%m-%d')" || exit 0
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT }}
