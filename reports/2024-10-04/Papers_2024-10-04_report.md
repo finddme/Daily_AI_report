@@ -1,4 +1,4 @@
-# Daily Artificial Intelligence Insights : Papers![Category Distribution Graph](paper_2024-10-05.png)
+# Daily Artificial Intelligence Insights : Papers![Category Distribution Graph](paper_2024-10-04.png)
 
 ## Inference acceleration
 
