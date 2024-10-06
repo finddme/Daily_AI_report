@@ -9,6 +9,7 @@ from utils.formats import *
 from utils.map import *
 from utils.config import *
 import json
+import random
 
 class RUN:
     def __init__(self,args):
@@ -127,8 +128,12 @@ class RUN:
             category = entry.get('category', 'Unknown Category')
             summary = entry.get('summary', 'No summary provided')
             source = entry.get('source', 'No source provided')
+
+            emojis = ['🥳', '👽', '🐱', '🤩', '🪸', '🎇', '🎉', '🎈', '🎠', '🧸', '🪄', '🍋', '🍊', '🌿', '✈️', '🚀', '🪐', '🌅', '🫧', '🌞', '☀️', '⭐', '❄️', '💙', '🩵', '💚']
             
-            report += f"## {category}\n\n"
+            random_emoji = random.choice(emojis)
+
+            report += f"## {random_emoji} {category}\n\n"
             
             report += f"**요약:**\n\n{summary}\n\n"
             
