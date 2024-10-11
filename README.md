@@ -7,7 +7,7 @@
 
 # 개발물 요약
 
-- 매일 오전 9시, 아래 출처로부터 정보를 수집
+- 매일 오전 10시, 아래 출처로부터 정보를 수집
   - news
     - [https://hackernews.betacat.io/](https://hackernews.betacat.io/)
     - [https://www.technologyreview.kr/category/ai](https://www.technologyreview.kr/category/ai)
