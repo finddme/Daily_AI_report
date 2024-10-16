@@ -32,9 +32,11 @@ def get_deeplearn():
             url=r["url"]
             response = requests.get(url)
             soup = BeautifulSoup(response.text, 'lxml')
-            summary=soup.find("div",class_="article-content").find("p").get_text(strip=True)
-            r["summary"]=summary
-            final_res.append(r)
+            try:
+                summary=soup.find("div",class_="article-content").find("p").get_text(strip=True)
+                r["summary"]=summary
+                final_res.append(r)
+            except Exception as e:pass
     return final_res
 
 
