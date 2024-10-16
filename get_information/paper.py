@@ -42,7 +42,7 @@ def get_deeplearn():
 
 def get_hf_daily():
     print(f"--- get paper from hf daily ---")
-    today = datetime(2024, 9, 25)
+    today = datetime.now().date()
     yesterday = today - timedelta(days=1)
     
     base_url=f"https://huggingface.co/papers?date="
