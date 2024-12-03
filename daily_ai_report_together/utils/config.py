@@ -3,10 +3,11 @@ import signal
 import os
 import openai
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
-claude_api_key = os.getenv("CLAUDE_API_KEY")
-Openai_API_KEY=openai.api_key
-Claude_API_KEY=claude_api_key
+# openai.api_key = os.getenv("OPENAI_API_KEY")
+# claude_api_key = os.getenv("CLAUDE_API_KEY")
+openai.api_key = os.getenv("Together_API_KEY")
+# Openai_API_KEY=openai.api_key
+Together_API_KEY= openai.api_key
 
 openai_model_name="gpt-4o"
 claude_model_name="claude-3-5-sonnet-20240620"
