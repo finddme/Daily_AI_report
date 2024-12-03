@@ -56,11 +56,13 @@ class Model:
                 print('instruct cpl try',attempt)
                 try:
                     llm_client = Instructor_Definition.together_inst(self.llm)
+                    print("++ 1 ++")
                     response = llm_client.chat.completions.create(
                         model="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
                         response_model=response_model,
                         messages=messages,
                     )
+                    print("++ 2 ++")
                     return [{"title": rc.title, "category": rc.category} for rc in response.categories]
                     
                 except Exception as e:
