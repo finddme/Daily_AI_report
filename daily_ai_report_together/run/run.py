@@ -21,7 +21,7 @@ class RUN:
 
         self.today = get_current_date_hyphen()
 
-        self.result_path=f"./daily_ai_report_together/reports/{self.today}"
+        self.result_path=f"./reports/{self.today}"
         if not os.path.exists(self.result_path):
             os.mkdir(self.result_path)
         
