@@ -53,6 +53,7 @@ class Model:
         if response_model:
             max_retries=5
             for attempt in range(max_retries):
+                print('instruct cpl try',attempt)
                 try:
                     llm_client = Instructor_Definition.together_inst(self.llm)
                     response = llm_client.chat.completions.create(
