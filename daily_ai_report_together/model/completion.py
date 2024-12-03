@@ -4,6 +4,11 @@ from typing import List, Dict, Union
 from .model_prep import Model
 from utils.config import *
 from utils.formats import *
+from utils.logging_wrapper import LoggingWrapper
+
+logger = LoggingWrapper('ayaan_logger')
+logger.add_file_handler("info")
+logger.add_stream_handler("error")
 
 class Completion(Model):
     def __init__(self, llm):
@@ -15,7 +20,7 @@ class Completion(Model):
     def __call__(self, message, system_prompt):
         self.messages.append({"role": "system", "content":system_prompt})
         self.messages.append({"role": "user", "content": message})
-        
+        # logger.info(self.messages)
         response = self.execute()
         return response
         

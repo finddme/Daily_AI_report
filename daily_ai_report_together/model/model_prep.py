@@ -51,24 +51,13 @@ class Model:
 
     def together_cpl(self,messages,response_model=None):
         if response_model:
-            max_retries=25
-            for attempt in range(max_retries):
-                print('instruct cpl try',attempt)
-                try:
-                    llm_client = Instructor_Definition.together_inst(self.llm)
-                    # print("++ 1 ++")
-                    response = llm_client.chat.completions.create(
-                        model="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
-                        response_model=response_model,
-                        messages=messages,
-                    )
-                    # print("++ 2 ++")
-                    return [{"title": rc.title, "category": rc.category} for rc in response.categories]
-                    
-                except Exception as e:
-                    if attempt == max_retries - 1:
-                        raise e
-                    continue
+            llm_client=Instructor_Definition.together_inst(self.llm)
+            response = llm_client.chat.completions.create(
+                model="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+                response_model=response_model,
+                messages=messages,
+            )
+            return [{"title":rc.title, "category":rc.category} for rc in response.categories]
         else:
             llm_client=self.llm
             response = llm_client.chat.completions.create(
@@ -82,4 +71,4 @@ class Model:
                 )
   
             response_message = response.choices[0].message
-            return response_message.content
+        return response_message.content

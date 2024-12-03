@@ -32,17 +32,15 @@ def get_deeplearn():
             url=r["url"]
             response = requests.get(url)
             soup = BeautifulSoup(response.text, 'lxml')
-            try:
-                summary=soup.find("div",class_="article-content").find("p").get_text(strip=True)
-                r["summary"]=summary
-                final_res.append(r)
-            except Exception as e:pass
+            summary=soup.find("div",class_="article-content").find("p").get_text(strip=True)
+            r["summary"]=summary
+            final_res.append(r)
     return final_res
 
 
 def get_hf_daily():
     print(f"--- get paper from hf daily ---")
-    today = datetime.now().date()
+    today = datetime(2024, 9, 25)
     yesterday = today - timedelta(days=1)
     
     base_url=f"https://huggingface.co/papers?date="
