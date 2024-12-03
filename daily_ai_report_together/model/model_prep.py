@@ -79,4 +79,4 @@ class Model:
                 )
   
             response_message = response.choices[0].message
-        return response_message.content
+            return response_message.content
