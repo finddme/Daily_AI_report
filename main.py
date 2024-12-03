@@ -9,7 +9,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--llm', type=str, default='claude', 
+    parser.add_argument('--llm', type=str, default='openai', 
                         choices=["openai","claude"], required=False)
 
     args = parser.parse_args()
