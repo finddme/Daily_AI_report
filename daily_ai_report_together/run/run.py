@@ -46,18 +46,40 @@ class RUN:
                 url=c["url"]
                 
                 insert_content+=f"""
-                - Title: "{title}"
-                - Snippet/Abstract : "{summary}"
+                - Title: '{title}'
+                - Snippet/Abstract : '{summary}'
                 """
 
                 source+=f""" - {title} ({url})\n"""
             
             user_prompt_insert=user_prompt.format(insert_content)
+
+            res=self.filtering_summary(completion,user_prompt_insert, systme_prompt)
+            
             summary_res.append({"category":cd_k, 
-                                "summary":completion(user_prompt_insert, systme_prompt), 
+                                # "summary":completion(user_prompt_insert, systme_prompt), 
+                                "summary":res, 
                                 "source":source})
         return summary_res
-
+        
+    def filtering_summary(self,completion,user_prompt_insert,systme_prompt,max_retries=5):
+        retry_count = 0
+        
+        while retry_count < max_retries:
+            result = completion(user_prompt_insert, systme_prompt)
+            
+            # 결과에 ", , , ,"가 포함되어 있는지 확인
+            if ", , , ," in result:
+                print(f"시도 {retry_count + 1}: 연속된 쉼표 발견. 재시도합니다.")
+                retry_count += 1
+                continue
+            else:
+                print("올바른 결과를 얻었습니다.")
+                return result
+        
+        print(f"최대 재시도 횟수({max_retries})를 초과했습니다.")
+        return result  # 마지막 시도의 결과를 반환
+    
     def categorization(self, collected_info, systme_prompt, user_prompt):
         instrctor=Instructor(self.llm)
         print(f"--- categorization ---")
@@ -75,7 +97,7 @@ class RUN:
         for c in category:
             for pr in collected_info:
                 if c["title"] == pr["title"]:
-                    if c["category"] !="Others" or c["category"] !="None":
+                    if c["category"].lower() !="others" or c["category"].lower() !="none":
                         pr["category"]=c["category"]
                         categorized_res.append(pr)
 
