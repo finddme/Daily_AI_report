@@ -63,9 +63,8 @@ class Model:
                     return [{"title": rc.title, "category": rc.category} for rc in response.categories]
                     
                 except Exception as e:
-                    if attempt == max_retries - 1:
-                        raise e
-                    continue
+                    if attempt == max_retries - 1: raise e
+                    else: continue
                     
             return None
         else:
