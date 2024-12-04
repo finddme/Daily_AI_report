@@ -25,7 +25,6 @@ jobs:
       run: sudo apt-get install fonts-nanum*
     - name: Run Python script
       env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
       run: python ./daily_ai_report_together/main.py  
     - name: Commit and push if changes
