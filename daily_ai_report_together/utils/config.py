@@ -5,7 +5,7 @@ import os
 # claude_api_key = os.getenv("CLAUDE_API_KEY")
 # together_api_key = os.getenv("Together_API_KEY")
 Claude_API_KEY=os.environ.get("CLAUDE_API_KEY")
-Together_API_KEY= os.environ.get("TOGETHER_API_KEY ")
+Together_API_KEY= os.environ.get("TOGETHER_API_KEY")
 os.environ["OPENAI_API_KEY"] = "Together_API_KEY"
 
 openai_model_name="gpt-4o"
