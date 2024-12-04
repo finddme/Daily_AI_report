@@ -4,7 +4,8 @@ import httpx
 import json
 from utils.config import *
 from .models import *
-        
+from tenacity import Retrying, stop_after_attempt, wait_fixed
+
 class Model:
     def __init__(self,llm):
         global system_prompt
@@ -59,6 +60,10 @@ class Model:
                         model="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
                         response_model=response_model,
                         messages=messages,
+                        max_retries=Retrying(
+                                                stop=stop_after_attempt(2),  
+                                                wait=wait_fixed(1),  
+                                            ), 
                     )
                     return [{"title": rc.title, "category": rc.category} for rc in response.categories]
                     
