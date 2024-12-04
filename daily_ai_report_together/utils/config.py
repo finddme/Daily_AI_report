@@ -1,13 +1,10 @@
 from datetime import datetime
 import signal
-import os
-import openai
 
-# openai.api_key = os.getenv("OPENAI_API_KEY")
-claude_api_key = os.getenv("CLAUDE_API_KEY")
-together_api_key = os.getenv("TOGETHER_API_KEY ")
-Claude_API_KEY=openai.api_key
-Together_API_KEY= together_api_key
+# claude_api_key = os.getenv("CLAUDE_API_KEY")
+# together_api_key = os.getenv("Together_API_KEY")
+Claude_API_KEY=os.environ.get("CLAUDE_API_KEY")
+Together_API_KEY= os.environ.get("TOGETHER_API_KEY ")
 
 openai_model_name="gpt-4o"
 claude_model_name="claude-3-5-sonnet-20240620"
