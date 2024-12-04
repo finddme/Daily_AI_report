@@ -32,7 +32,7 @@ jobs:
         git config --local user.email yein4452@gmail.com
         git config --local user.name finddme
         git pull
-        git add ./daily_ai_report_together/reports/
+        git add ./reports/
         git commit -m "Daily update: $(date +'%Y-%m-%d')" || exit 0
         git push
       env:
