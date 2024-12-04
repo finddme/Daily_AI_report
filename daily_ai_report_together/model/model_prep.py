@@ -54,6 +54,7 @@ class Model:
         if response_model:
             max_retries=25
             for attempt in range(max_retries):
+                print("inst attempt...", attempt)
                 try:
                     llm_client = Instructor_Definition.together_inst(self.llm)
                     response = llm_client.chat.completions.create(
@@ -70,8 +71,6 @@ class Model:
                 except Exception as e:
                     if attempt == max_retries - 1: raise e
                     else: continue
-                    
-            return None
         else:
             llm_client=self.llm
             response = llm_client.chat.completions.create(
