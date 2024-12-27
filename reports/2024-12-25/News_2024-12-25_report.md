@@ -1,4 +1,4 @@
-# Daily Artificial Intelligence Insights : News![Category Distribution Graph](/Daily_AI_report/reports/2024-12-18/news_2024-12-18.png)
+# Daily Artificial Intelligence Insights : News![Category Distribution Graph](/reports/2024-12-18/news_2024-12-18.png)
 
 ## AI business insight
 
