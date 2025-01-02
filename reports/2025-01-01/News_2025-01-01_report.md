@@ -59,27 +59,6 @@
  - Déjà vu: Ghostly CVEs in my terminal title (https://dgl.cx/2024/12/ghostty-terminal-title)
 
 
-## Natural Language Processing
-
-**요약:**
-
-**Key Themes**:
-, LLM, , , .
-
-**Major Events**:
-2024 , LLM , , , , . , LLM , , .
-
-**Impact Analysis**:
-, LLM , , , . , , , . , , , . , , , .
-
-**Final Summary**:
-2024 , LLM , , , . , LLM , , , . , , , , . , , , , .
-
-**출처:**
-
- - Things we learned about LLMs in 2024 (https://simonwillison.net/2024/Dec/31/llms-in-2024/)
-
-
 ## Others
 
 **요약:**
@@ -174,29 +153,5 @@ Arnis는 오픈스트리트맵 데이터를 사용하여 실제 지리와 건축
  - Arnis: Generate cities in Minecraft from OpenStreetMap (https://github.com/louis-e/arnis)
 
 
-## AI business insight
-
-**요약:**
-
-**Key Themes**:
- AI, , , 
-
-**Major Events**:
-1. : 3 AI  . FTAI Aviation Tilray .
-2. : Tirreno , . , .
-
-**Impact Analysis**:
- : AI , . , , .
- : , , . , .
- : , , . , .
- : , , . , .
-
-**Final Summary**:
- AI , . , , . , , . , , . , , .
-
-**출처:**
-
- - Show HN: Watch 3 AIs compete in real-time stock trading (https://trading.snagra.com)
- - Show HN: Open-source security user analytics (https://github.com/TirrenoTechnologies/tirreno)
 
 
