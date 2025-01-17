@@ -179,37 +179,6 @@
  - Show HN: Simplex: Automate browser workflows using code and natural language (https://www.simplex.sh/playground)
 
 
-## Model training technique
-
-**요약:**
-
-**1. Key Themes**:
-, FFmpeg, WebAssembly, AI . FFmpeg, WebAssembly, AI .
-
-**2. Major Events**:
- FFmpeg By Example FFmpeg . Marimo WebAssembly . MIT AI .
-
-* FFmpeg By Example FFmpeg . FFmpeg .
-* Marimo WebAssembly . GitHub .
-* MIT AI . 410 . CPU 58 .
-
-**3. Impact Analysis**:
-, , , .
-
-* : FFmpeg, WebAssembly AI . 
-* : AI . 
-* : AI . 
-* : FFmpeg, WebAssembly AI .
-
-**4. Final Summary**:
-, FFmpeg, WebAssembly, AI . FFmpeg, WebAssembly AI . AI . , FFmpeg, WebAssembly AI .
-
-**출처:**
-
- - FFmpeg by Example (https://ffmpegbyexample.com/)
- - Show HN: WASM-powered codespaces for Python notebooks on GitHub (https://docs.marimo.io/guides/publishing/playground/#open-notebooks-hosted-on-github)
- - Getting an all-optical AI to handle non-linear math (https://arstechnica.com/science/2025/01/getting-an-all-optical-ai-to-handle-non-linear-math/)
-
 
 ## Computer Vision
 
